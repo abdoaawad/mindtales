@@ -1,0 +1,39 @@
+import React from "react"; import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"; import { Button } from "@/components/ui/button";
+
+const Navbar = () => (
+
+  <nav className="flex justify-between items-center p-4 border-b">
+    <div className="text-xl font-bold">Mindtales</div>
+    <div className="space-x-4">
+      <Link to="/">Home / الرئيسية</Link>
+      <Link to="/books">Books / الكتب</Link>
+      <Link to="/cart">Cart / السلة</Link>
+      <Link to="/support">Support / الدعم</Link>
+    </div>
+  </nav>
+);const Home = () => (
+
+  <div className="p-6 text-center">
+    <h1 className="text-3xl font-bold mb-4">Welcome to Mindtales / أهلاً بك في ميند تيلز</h1>
+    <p className="text-lg">A place for stories, books, and personal experiences. / مكان للكتب، القصص، والخبرات الشخصية.</p>
+  </div>
+);const Books = () => (
+
+  <div className="p-6">
+    <h2 className="text-2xl font-semibold mb-4">Books / الكتب</h2>
+    <p>Coming soon... / قريباً...</p>
+  </div>
+);const Cart = () => (
+
+  <div className="p-6">
+    <h2 className="text-2xl font-semibold mb-4">Cart & Checkout / السلة والدفع</h2>
+    <p>Your cart is empty. / السلة فارغة.</p>
+  </div>
+);const Support = () => (
+
+  <div className="p-6">
+    <h2 className="text-2xl font-semibold mb-4">Support / الدعم</h2>
+    <p>If you need help, contact us at support@mindtales.com / إذا كنت بحاجة إلى مساعدة، راسلنا على support@mindtales.com</p>
+  </div>
+);export default function App() { return ( <Router> <div className="min-h-screen bg-white text-black font-sans"> <Navbar /> <Routes> <Route path="/" element={<Home />} /> <Route path="/books" element={<Books />} /> <Route path="/cart" element={<Cart />} /> <Route path="/support" element={<Support />} /> </Routes> </div> </Router> ); }
+
